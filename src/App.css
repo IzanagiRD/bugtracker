@@ -1,38 +1,231 @@
-.App {
+/*General*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #302d31;
+  color: #333;
+  font-family: Verdana, sans-serif;
+}
+
+h1, h2 {
+  color: #444;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Navbar*/
+nav {
+  background-color: #333;
+  padding: 10px 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.logo{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/*Home*/
+div {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 2200px;
+  min-height: 2700px;
+  background-color: rgb(254, 233, 233);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  border: 0.1px solid #e5e1e1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.home-title{
+  font-size: 80px;
+}
+
+.pageDescriptionContainer{
+  min-height: 700px;
+  max-width: 1900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-image: linear-gradient(to bottom, #0d7ac8, #342e2e);
+
+}
+
+.pageDescription{
+  min-height: 200px;
+  max-width: 600px;
+  flex: 1;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.pageDescription p{
+  font-size: 30px;
+  color: #e5e1e1;
+}
+
+.imageHome{
+  min-height: 200px;
+  max-width: 900px;
+  flex-shrink: 0;
+  
+}
+
+.cta{
+  background-color: transparent;
+  justify-content: center;
+  gap: 20px;
+  position: static;
+}
+
+.cta a{
+  color: white;
+  background-color: #0d7ac8;
+}
+
+.pageReasonsContainer{
+  background-image: linear-gradient(to bottom, #0d7ac8, #342e2e);
+  
+}
+
+.pageReasonsBox{
+  min-height: 400px;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+
+}
+
+.pageReasonsDescription{
+  min-height: 200px;
+  max-width: 600px;
+  flex: 1;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent; 
+}
+
+.pageReasonsDescription h1{
+  font-size: 45px;
+  color: white;
+}
+
+.pageReasonsDescription p{
+  font-size: 30px;
+  color: #b2a4a4;
+}
+
+.pageReasonsDescription hr{
+  border: 1px solid #b2a4a4;
+}
+
+.imageReasons{
+  min-height: 200px;
+  max-width: 900px;
+  flex-shrink: 0;
+  
+}
+
+/*Dashboard*/
+/*Your Tasks*/
+.tasks-container{
+  max-width: 300px;
+  margin: 20px 0 20px 20px;
+}
+
+
+.tasks{
+  min-height: 40px;
+  max-width:230px;
+}
+
+
+/*LoginRegister*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+
+.dashboard-summary {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/*About*/
+.about-text {
+  font-style: italic;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
