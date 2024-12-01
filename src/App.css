@@ -47,7 +47,7 @@ div {
   margin: 20px auto;
   padding: 20px;
   max-width: 2200px;
-  min-height: 2700px;
+  min-height: 1300px;
   background-color: rgb(254, 233, 233);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
@@ -215,17 +215,125 @@ button:hover {
   font-weight: bold;
 }
 
-/*About*/
-.about-text {
-  font-style: italic;
+/*Footer*/
+.footer{
+  min-height: 100px;
+  max-width: 2200px;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.footer h4{
+  padding-top: 5%;
   text-align: center;
 }
 
+.pageFooterBox{
+  min-height: 00px;
+  max-width: 3000px;
+  flex-direction: row;
+  display: flex;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
 
+.pageFooterDescription{
+  min-height: 200px;
+  max-width: 400px;
+  flex-direction: row;
+  border-radius: initial;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+}
 
+.pageFooterDescription h2{
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
 
+.pageFooterDescription p{
+  font-size: 30px;
+  color: #b2a4a4;
+}
 
+/*About*/
+.aboutPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
 
+.aboutPage h3{
+  font-size: 30px;
+}
 
+.aboutPage h2{
+  margin-top: 0;
+  font-size: 60px;
+}
 
+.aboutTitle{
+  min-height: 100px;
+  min-width: 100px;
+  align-content: center;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+}
 
+.aboutTitle p{
+  text-align: center;
+}
+
+.history{
+  min-height: 500px;
+  max-width: 1000px;
+  align-items: left;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.history h3{
+  text-align: center;
+}
+
+.history li{
+  font-size: 20px;
+}
+
+.whyUs{
+  text-align: center;
+  align-items: center;
+  min-height: 100px;
+  max-width: 600px;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+} 
+
+.whyUs p{
+  font-size: 20px;
+}
+
+.ourTeam{
+  text-align: center;
+  min-width: 400px;
+  min-height: 100px;
+  border-radius: initial;
+  border: none; 
+  box-shadow: none;
+  background-color: transparent;
+}

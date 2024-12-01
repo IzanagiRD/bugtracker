@@ -1,6 +1,6 @@
 // src/components/Home.js
 import { React } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -25,7 +25,8 @@ function Home() {
             
             
             <nav className='cta'>
-                <Link to="/about" className='aboutUsHyperLink'>About Us</Link>
+                {/* <Link to="/about" className='aboutUsHyperLink'>About Us</Link> */}
+                <a href='/about' className='aboutUsHyperLink'>About Us</a>
                 <a href="#pageReasonsContainer" className='learnmoreHyperLink'>Learn More</a>
             </nav>
             
@@ -98,6 +99,7 @@ function Home() {
             </div>
 
         </div>
+        
     );
 }
 
