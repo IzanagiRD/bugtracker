@@ -1,19 +1,83 @@
-// src/components/Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './Navbar.css';
+import axios from 'axios';
 
-function Navbar() {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const toggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    };
+
+    const handleLogout = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/logout');
+            if (response.data.success) {
+                setIsLoggedIn(false);  // Reset the login state in the parent
+                navigate('/login');
+            }
+        } catch (err) {
+            console.error('Logout failed:', err);
+        }
+    };
+
     return (
-        <nav>
-            <h1 className='logo'>Bug Tracker</h1>
-            <Link to="/">Home</Link>
-            <Link to="/login">Log In / Register</Link>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/workshop">Workshop</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contactus">Contact Us</Link>
+        <nav className="navbar">
+            <div className="navbar-container">
+                <Link to="/" className="navbar-logo">
+                    BugTracker
+                </Link>
+                <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                    {isOpen ? '✖' : '☰'}
+                </div>
+                <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+                    <li className="nav-item">
+                        <Link to="/" className="nav-links" onClick={toggleMenu}>
+                            Home
+                        </Link>
+                    </li>
+                    {isLoggedIn ? (
+                        <>
+                            <li className="nav-item">
+                                <Link to="/dashboard" className="nav-links" onClick={toggleMenu}>
+                                    Dashboard
+                                </Link>
+                            </li>
+                        </>
+                    ) : null}
+                    <li className="nav-item">
+                        <Link to="/workshop" className="nav-links" onClick={toggleMenu}>
+                            Workshop
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/about" className="nav-links" onClick={toggleMenu}>
+                            About
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/contactus" className="nav-links" onClick={toggleMenu}>
+                            Contact
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            {/* Container for right-aligned items */}
+            <div className="nav-right">
+                {isLoggedIn ? (
+                    <button className="nav-links logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                ) : (
+                    <Link to="/login" className="nav-links login-button">
+                        Log In
+                    </Link>
+                )}
+            </div>
         </nav>
     );
-}
+};
 
 export default Navbar;

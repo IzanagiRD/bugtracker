@@ -1,0 +1,245 @@
+.home-page-container {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: 
+        linear-gradient(to right, rgba(0, 204, 204, 1) 0%, rgba(0, 204, 204, 1) 50%, rgba(255, 245, 225, 0.5) 100%),
+        linear-gradient(to left, rgba(173, 216, 230, 1) 0%, rgba(211, 240, 255, 0.8) 50%, rgba(245, 250, 255, 0.5) 100%),
+        linear-gradient(135deg, #2bb8d1, #add8e6, #ffffff);
+    padding: 50px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-blend-mode: lighten, overlay;
+}
+
+.home-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #2c3e50;
+    background: linear-gradient(to right, #00bcd4, #8e44ad);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    padding: 60px;
+    background: #ebfffe;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 16 00px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.intro-description {
+    flex: 1;
+    padding-right: 50px;
+    text-align: left;
+    color: #2c3e50;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.intro-description h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.intro-description p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.intro-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+}
+
+.btn-primary {
+    background: #007BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #007BFF;
+    color: #007BFF;
+}
+
+.btn-secondary:hover {
+    background: #007BFF;
+    color: white;
+    transform: scale(1.05);
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.intro-section:hover {
+    transform: scale(1.05);
+}
+
+.features-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    background: #ebfffe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1430px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.feature-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background: #c3b9e7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.feature-box:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-description {
+    flex: 1;
+    text-align: left;
+}
+
+.feature-description h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+.feature-description hr {
+    border: 0;
+    height: 2px;
+    background: #007BFF;
+    margin: 10px 0;
+    width: 50px;
+}
+
+.feature-description p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 65%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .intro-description {
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .intro-description h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro-description p {
+        font-size: 1rem;
+    }
+
+    .intro-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 1rem;
+        padding: 12px 20px;
+        width: 80%;
+    }
+
+    .intro-image {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+
+    .feature-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .feature-image {
+        max-width: 90%;
+    }
+
+    .feature-description h1 {
+        font-size: 1.5rem;
+    }
+
+    .feature-description p {
+        font-size: 0.9rem;
+    }
+}

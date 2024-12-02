@@ -1,40 +1,35 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import './Footer.css';
 
-function Footer() {
-   return (
-      <div className="footer">
-         {/* <p>&copy; {new Date().getFullYear()} Bug Tracker. All rights reserved.</p> */}
-         <div className='pageFooterBox'>
-            <div className='pageFooterDescription'>
-               <h2>Bug Tracker</h2>
-               {/* <Link to={'/login'}>Login</Link> */}
-               <a href='/login'>Login</a>
+const Footer = () => {
+    return (
+        <footer className="footer">
+            <div className="footer-container">
+                
+                <div className="footer-links">
+                    <a href="/" className="footer-link">Home</a>
+                    <a href="/contactus" className="footer-link">Contact Us</a>
+                    <a href="/about" className="footer-link">About</a>
+                </div>
+
+                <div className="social-media">
+                    <a href="https://www.facebook.com" className="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" />
+                    </a>
+                    <a href="https://www.twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter-squared.png" alt="Twitter" />
+                    </a>
+                    <a href="https://www.instagram.com" className="social-link" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" />
+                    </a>
+                </div>
+                
+                <div className="copyright">
+                    &copy; {new Date().getFullYear()} BugTracker. All rights reserved. Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.
+                </div>
             </div>
-            <div className='pageFooterDescription'>
-               <h2>About Bug Tracker</h2>
-               {/* <Link to={'/about'}>About Us</Link> */}
-               <a href='/about'>About Us</a>
-            </div>
-            <div className='pageFooterDescription'>
-               <h2>Jobs</h2>
-               {/* <Link to={'/about'}>Opportunities</Link> */}
-               <a href='/about'>Opportunities</a>
-            </div>
-            <div className='pageFooterDescription'>
-               <h2>Apps</h2>
-               {/* <Link to={'/dashboard'}>Dashboard</Link> */}
-               <a href='/dashboard'>Dashboard</a>
-            </div>
-            <div className='pageFooterDescription'>
-               <h2>Contact Us</h2>
-               {/* <Link to={'/contactus'}>Need Assistance? Get in touch and we can help.</Link> */}
-               <a href='/contactus'>Need Assistance? Get in touch and we can help.</a>
-            </div>
-         </div>
-         <hr></hr>
-         <h4>&copy; {new Date().getFullYear()} Bug Tracker. All rights reserved.</h4>
-      </div>
-   ); 
-}
+        </footer>
+    );
+};
+
 export default Footer;
