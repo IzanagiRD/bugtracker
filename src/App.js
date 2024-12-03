@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -13,6 +14,20 @@ import './App.css'
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        checkSession();
+    }, []);
+
+    const checkSession = async () => {
+        try {
+            const res = await axios.get('http://localhost:8000/check-session', { withCredentials: true });
+            setIsLoggedIn(res.data.loggedIn);
+        } catch (err) {
+            console.error('Error checking session:', err);
+            setIsLoggedIn(false);
+        }
+    };
 
     const handleLogin = (status) => {
         setIsLoggedIn(status);
@@ -29,7 +44,10 @@ function App() {
                 />
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/workshop" element={<Workshop />} />
+                <Route
+                    path="/workshop"
+                    element={<Workshop isLoggedIn={isLoggedIn} />}
+                />
                 <Route path="/about" element={<About />} />
                 <Route path="/contactus" element={<ContactUs />} />
             </Routes>
