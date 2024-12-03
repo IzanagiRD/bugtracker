@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import './Login.css'
+import signupImg from '../public/sign-up.png'
 
 const Login = ({ setIsLoggedIn }) => {
     const [LoginData, setLoginData] = useState({
@@ -32,14 +34,16 @@ const Login = ({ setIsLoggedIn }) => {
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input type='email' name='email' placeholder='Email' onChange={handleChange} required />
-                <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                <button type="submit">Login</button>
-                <Link to={'/register'}>Don't have an Account?</Link>
+        <div id="logindiv">
+            <form id="loginform" onSubmit={handleLogin}>
+                <h2>Sign In to Your Account</h2>
+                <input className='login' type='email' name='email' placeholder='Email' onChange={handleChange} required />
+                <input className='login' type="password" name="password" placeholder="Password" onChange={handleChange} required />
+                <button className='login' type="submit">Login</button>
+                <Link id="link" to={'/register'}>Don't have an Account?</Link>
             </form>
+            <div id="loginImgDiv"><img src={signupImg}/></div>
+            
         </div>
     );
 };
