@@ -25,8 +25,14 @@ const Footer = () => {
                 </div>
                 
                 <div className="copyright">
-                    &copy; {new Date().getFullYear()} BugTracker. All rights reserved. Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.
+                    &copy; {new Date().getFullYear()} BugTracker. Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>. <br />
+                    3D Models: <br />
+                    <a href="https://skfb.ly/6QWpW" target="_blank" rel="noopener noreferrer">"A Windy Day" by Loïc Norgeot</a> licensed under
+                    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer"> Creative Commons Attribution</a>, <br />
+                    <a href="https://skfb.ly/oDPCS" target="_blank" rel="noopener noreferrer">"Modern Office" by dylanheyes</a> licensed under
+                    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer"> Creative Commons Attribution</a>.
                 </div>
+
             </div>
         </footer>
     );

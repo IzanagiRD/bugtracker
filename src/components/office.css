@@ -1,0 +1,84 @@
+.view-introduction {
+    flex: 1;
+    text-align: center;
+    color: #2c3e50;
+    animation: fadeIn 1s ease-in-out;
+    white-space: nowrap;
+    min-width: 400px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-introduction h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
+
+.view-introduction p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.action-buttons {
+    display: flex;
+    padding-top: 40px;
+    gap: 20px;
+    justify-content: center; /* Ensure buttons are centered */
+}
+
+/* Center content in html-content */
+.html-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Desktop Styles */
+@media (min-width: 1200px) {
+    .view-introduction {
+        padding-left: 0; /* Remove any offset padding */
+        text-align: center;
+        justify-content: center; /* Ensure the content is centered */
+    }
+}
+
+/* Mobile-friendly styles for screens below 768px */
+@media (max-width: 768px) {
+    .view-introduction {
+        min-width: auto; /* Allow intro-description to take full width */
+        padding: 0 10px;
+    }
+
+    .view-introduction h2 {
+        font-size: 2rem; /* Smaller heading on mobile */
+    }
+
+    .view-introduction p {
+        font-size: 1rem; /* Smaller paragraph font size */
+    }
+
+    .exploration-title {
+        font-size: 2.5rem; /* Title size for mobile */
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 1rem; /* Button text on mobile */
+        padding: 10px 20px;
+    }
+}

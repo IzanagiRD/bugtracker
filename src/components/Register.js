@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import signupImg from '../public/register.png'
 import './Register.css'
 function Register() {
     const [RegisterData, setRegisterData] = useState({
@@ -42,7 +41,9 @@ function Register() {
                 <button className='register' type="submit">Register</button>
                 <Link id='toLogin' to={'/login'}>Already have an account?</Link>
             </form>
-            <div id="registerImgDiv"><img src={signupImg}/></div>
+            <div id="registerImgDiv">
+                <img src="/register.png" alt="Register" />
+            </div>
         </div>
     );
 }

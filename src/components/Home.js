@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './Home.css';
+import Globe from './Globe';
+import ModernOffice from "./ModernOffice";
 
 function Home() {
     return (
         <div className="home-page-container">
-            <h1 className="home-title">Track Bugs. Improve Code. Enhance Workflow.</h1>
 
+            <div className="new-section">
+                <ModernOffice />
+            </div>
+
+            {/* Intro Section */}
             <div className="intro-section">
                 <div className="intro-description">
                     <h2>Effortlessly Manage Bugs and Boost Productivity</h2>
@@ -22,6 +28,22 @@ function Home() {
                 />
             </div>
 
+            {/* 3D Globe Section */}
+            <section id="globe-section" className="globe-section">
+                <div className="globe-content">
+                    <div className="globe-left">
+                        <Suspense fallback={<div>Loading Globe...</div>}>
+                            <Globe />
+                        </Suspense>
+                    </div>
+                    <div className="globe-right">
+                        <h2>Collaborate on Boards with others</h2>
+                        <p>Seamlessly work with your team on shared boards and tasks, ensuring smooth collaboration and productivity.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Features Section */}
             <div id="features-section" className="features-section">
                 {[
                     {

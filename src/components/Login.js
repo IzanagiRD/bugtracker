@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import './Login.css'
-import signupImg from '../public/sign-up.png'
+import './Login.css';
 
 const Login = ({ setIsLoggedIn }) => {
     const [LoginData, setLoginData] = useState({
@@ -23,7 +22,7 @@ const Login = ({ setIsLoggedIn }) => {
             const response = await axios.post('http://localhost:8000/login', LoginData, { headers: { 'Content-Type': 'application/json' } });
 
             if (response.data.success) {
-                setIsLoggedIn(true); // Update login state on success
+                setIsLoggedIn(true);
                 navigate(response.data.redirectTo);
             } else {
                 alert(response.data.message);
@@ -42,8 +41,9 @@ const Login = ({ setIsLoggedIn }) => {
                 <button className='login' type="submit">Login</button>
                 <Link id="link" to={'/register'}>Don't have an Account?</Link>
             </form>
-            <div id="loginImgDiv"><img src={signupImg}/></div>
-            
+            <div id="loginImgDiv">
+                <img src="/sign-up.png" alt="Sign Up" />
+            </div>
         </div>
     );
 };

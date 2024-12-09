@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import axios from 'axios';
@@ -39,13 +39,11 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                         </Link>
                     </li>
                     {isLoggedIn ? (
-                        <>
-                            <li className="nav-item">
-                                <Link to="/dashboard" className="nav-links" onClick={toggleMenu}>
-                                    Dashboard
-                                </Link>
-                            </li>
-                        </>
+                        <li className="nav-item">
+                            <Link to="/dashboard" className="nav-links" onClick={toggleMenu}>
+                                Dashboard
+                            </Link>
+                        </li>
                     ) : null}
                     <li className="nav-item">
                         <Link to="/workshop" className="nav-links" onClick={toggleMenu}>
@@ -62,19 +60,19 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
                             Contact
                         </Link>
                     </li>
+                    {/* Move login/logout button inside the menu */}
+                    <li className="nav-item">
+                        {isLoggedIn ? (
+                            <button className="nav-links logout-button" onClick={handleLogout}>
+                                Logout
+                            </button>
+                        ) : (
+                            <Link to="/login" className="nav-links login-button" onClick={toggleMenu}>
+                                Log In
+                            </Link>
+                        )}
+                    </li>
                 </ul>
-            </div>
-            {/* Container for right-aligned items */}
-            <div className="nav-right">
-                {isLoggedIn ? (
-                    <button className="nav-links logout-button" onClick={handleLogout}>
-                        Logout
-                    </button>
-                ) : (
-                    <Link to="/login" className="nav-links login-button">
-                        Log In
-                    </Link>
-                )}
             </div>
         </nav>
     );

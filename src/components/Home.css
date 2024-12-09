@@ -1,27 +1,14 @@
 .home-page-container {
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-image: 
         linear-gradient(to right, rgba(0, 204, 204, 1) 0%, rgba(0, 204, 204, 1) 50%, rgba(255, 245, 225, 0.5) 100%),
         linear-gradient(to left, rgba(173, 216, 230, 1) 0%, rgba(211, 240, 255, 0.8) 50%, rgba(245, 250, 255, 0.5) 100%),
-        linear-gradient(135deg, #2bb8d1, #add8e6, #ffffff);
-    padding: 50px;
+        linear-gradient(135deg, #abdde6, #add8e6, #2bb8d1);
     margin: 0 auto;
     box-sizing: border-box;
     background-blend-mode: lighten, overlay;
-}
-
-.home-title {
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-    color: #2c3e50;
-    background: linear-gradient(to right, #00bcd4, #8e44ad);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: fadeIn 2s ease-in-out;
+    overflow-x: hidden;
 }
 
 @keyframes fadeIn {
@@ -42,10 +29,7 @@
     justify-content: space-between;
     margin-bottom: 100px;
     padding: 60px;
-    background: #ebfffe;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    max-width: 16 00px;
+    max-width: 1600px;
     margin: 0 auto;
     transition: transform 0.3s ease;
 }
@@ -88,6 +72,7 @@
     transition: all 0.3s ease;
     font-weight: 600;
     font-family: 'Lora', serif;
+    text-wrap: nowrap;
 }
 
 .btn-primary {
@@ -120,74 +105,173 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-.intro-section:hover {
-    transform: scale(1.05);
-}
-
 .features-section {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 40px;
-    background: #ebfffe;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-width: 1430px;
+    gap: 4rem;
+    padding: 2rem;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 6rem;
+    width: 100%;
+    max-width: 90vw; /* Responsive limit for large screens */
+    box-sizing: border-box;
 }
 
 .feature-box {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
-    padding: 40px;
-    background: #c3b9e7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #fbc2eb, #a6c1ee);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    max-width: 85%; /* Dynamically adjusts to screen size */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .feature-box:nth-child(even) {
     flex-direction: row-reverse;
 }
 
+.feature-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
 .feature-description {
     flex: 1;
     text-align: left;
+    min-width: 20rem; /* Scales for smaller screens */
+    max-width: 100%; /* Takes up half the width for larger screens */
+    box-sizing: border-box;
 }
 
 .feature-description h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
 .feature-description hr {
     border: 0;
-    height: 2px;
+    height: 0.2rem;
     background: #007BFF;
-    margin: 10px 0;
-    width: 50px;
+    margin: 0.5rem 0;
+    width: 4rem;
+    border-radius: 0.2rem;
 }
 
 .feature-description p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
+    line-height: 1.6;
 }
 
 .feature-image {
     flex: 1;
-    max-width: 65%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.feature-box:hover {
-    transform: scale(1.02);
+.feature-image:hover {
+    transform: scale(1.05);
+}
+
+.new-section {
+    width: 100%;
+    text-align: center;
+}
+
+.globe-section {
+    text-align: left;
+    padding: 50px 20px;
+    position: relative; /* Establishes stacking context */
+    clip-path: polygon(10% 20%, 20% 15%, 35% 20%, 50% 30%, 65% 25%, 85% 35%, 100% 55%, 90% 75%, 70% 85%, 50% 90%, 30% 80%, 10% 60%, 5% 40%);
+    z-index: 0; /* Background layer */
+    background: radial-gradient(circle at center, rgba(76, 175, 80, 0.4) 0%, rgba(0, 150, 136, 0.3) 50%, rgba(0, 188, 212, 0.4) 100%);
+}
+
+.globe-section,
+.globe-left::before,
+.globe-left::after {
+    pointer-events: none; /* Prevent these from intercepting interactions */
+}
+
+.globe-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Keep content on top */
+    width: 100%;
+    z-index: 2; /* Ensure content stays on top of the background */
+}
+
+.globe-left {
+    width: 60%;
+    height: 600px; /* Adjusted height */
+    background: #add8e6; /* Light blue background */
+    position: relative; /* Create stacking context */
+    pointer-events: all;
+    clip-path: polygon(0% 5%, 12% 10%, 30% 5%, 50% 10%, 70% 15%, 85% 30%, 95% 45%, 100% 60%, 85% 80%, 65% 90%, 40% 85%, 10% 70%, 0% 50%);
+    z-index: 3; /* Ensure it's above the globe section */
+}
+
+.globe-item {
+    z-index: 5; /* Ensure globe content stays on top of the globe-left container */
+}
+.globe-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.5), rgba(0, 150, 136, 0.4), rgba(0, 188, 212, 0.5));
+}
+
+.globe-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 204, 204, 0.6) 0%, rgba(0, 0, 0, 0.3) 70%);
+}
+
+.globe-right {
+    width: 40%;
+}
+
+.globe-right h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.globe-right p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+@media (min-width: 768px) {
+    .intro-section {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
+    .new-section {
+        display: none;
+    }
     .intro-section {
         flex-direction: column;
         align-items: center;
@@ -221,18 +305,21 @@
     }
 
     .intro-image {
-        max-width: 80%;
+        max-width: 100%;
         margin-top: 20px;
     }
 
     .feature-box {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+    }
+
+    .feature-description {
+        min-width: 100%;
     }
 
     .feature-image {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .feature-description h1 {
@@ -241,5 +328,50 @@
 
     .feature-description p {
         font-size: 0.9rem;
+    }
+    .globe-section {
+        padding: 100px 15px;
+        clip-path: none; /* Remove clip-path for a cleaner mobile view */
+        background: none;
+    }
+
+    .globe-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .globe-left {
+        width: 100%;
+        height: 400px; /* Adjust height for mobile view */
+        clip-path: polygon(
+            25% 15%, /* Move this down and inward for a rounded effect */
+            30% 10%, /* Move this a little inward */
+            50% 10%, /* Keep the middle but lower a little */
+            70% 15%, /* Adjust this to create a curve */
+            75% 20%, /* A little lower and inward */
+            85% 30%, /* Move this downward to avoid sharp edges */
+            95% 45%, /* Keep this unchanged */
+            95% 85%, /* Modify this part for more visibility at the bottom */
+            90% 95%, /* This also modifies the bottom corner */
+            70% 100%, /* Push the middle bottom point down */
+            100% 100%, /* Modify this to keep the left bottom area visible */
+            5% 100%,  /* Adjust this if you want more visibility of the bottom-left corner */
+            0% 50%   /* Top-left corner */
+        );
+    }
+
+    .globe-right {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .globe-right h2 {
+        font-size: 1.5rem;
+    }
+
+    .globe-right p {
+        font-size: 1rem;
     }
 }
