@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import signupImg from '../public/register.png'
 import './Register.css'
 function Register() {
+    const navigate = useNavigate();
     const [RegisterData, setRegisterData] = useState({
         fname: '',
         lname: '',
@@ -20,8 +22,13 @@ function Register() {
         // e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:8000/register', RegisterData, { headers: { 'Content-Type': 'application/json' } })
+            const response = await axios.post('/register', RegisterData, { headers: { 'Content-Type': 'application/json' } })
             console.log('Response: ', response.data);
+            if (response.data.success) {
+                navigate(response.data.redirectTo)
+            } else {
+                alert(response.data.message)
+            }
             
         } catch (error) {
             console.log(`Error Registering Account: ${error}`);
@@ -42,7 +49,7 @@ function Register() {
                 <Link id='toLogin' to={'/login'}>Already have an account?</Link>
             </form>
             <div id="registerImgDiv">
-                <img src="/register.png" alt="Register" />
+                <img src={signupImg} alt="Register" />
             </div>
         </div>
     );

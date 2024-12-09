@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import axios from 'axios';
 
-const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+const Navbar = ({isLoggedIn, setIsLoggedIn}) => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
     const handleLogout = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/logout');
+            const response = await axios.post('/logout');
             if (response.data.success) {
                 setIsLoggedIn(false);  // Reset the login state in the parent
                 navigate('/login');

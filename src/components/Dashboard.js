@@ -1,8 +1,25 @@
+
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
-function Dashboard() {
+const Dashboard = () => {
     const [projects, setProjects] = useState([]);
+    const [user, setUser] = useState();
+    
+    const getUser = async () => {
+        try {
+            const response = await axios.get('/dashboard', {withCredentials: true})
+            if (response.data.loggedIn) {
+                setUser(response.data.user)
+            }else {
+                navigate('/login')
+            }
+        } catch (error) {
+            
+        }finally {
+            console.log(JSON.stringify(user))
+        }
+    }
     
     useEffect(() => {
         const fetchedProjects = [
@@ -15,6 +32,7 @@ function Dashboard() {
             { id: 7 , name: 'Project 2', img: 'https://picon.ngfiles.com/935000/flash_935672_card.webp?f1718959021' },
         ];
         setProjects(fetchedProjects);
+        getUser()
     }, []);
 
     return (
@@ -47,7 +65,7 @@ function Dashboard() {
                         <h2>Settings</h2>
                         <h2>Help</h2>
                     </div>
-                </div>
+        <div>
                 <div className='dashboardBox'>
                     <div className='userBox'>
                         <div className='userLogoBox'>
@@ -102,6 +120,8 @@ function Dashboard() {
                 </div>
             </div>
         </div>
+    </div>
+</div>
     );
 }
 

@@ -19,7 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/login', LoginData, { headers: { 'Content-Type': 'application/json' } });
+            const response = await axios.post('/login', LoginData, { headers: { 'Content-Type': 'application/json' } });
 
             if (response.data.success) {
                 setIsLoggedIn(true);

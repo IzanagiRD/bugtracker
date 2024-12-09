@@ -21,8 +21,10 @@ function App() {
 
     const checkSession = async () => {
         try {
-            const res = await axios.get('http://localhost:8000/check-session', { withCredentials: true });
-            setIsLoggedIn(res.data.loggedIn);
+            const res = await axios.get('/check-session', { withCredentials: true });
+            if (res.data.loggedIn) {
+                setIsLoggedIn(true)
+            }
         } catch (err) {
             console.error('Error checking session:', err);
             setIsLoggedIn(false);
